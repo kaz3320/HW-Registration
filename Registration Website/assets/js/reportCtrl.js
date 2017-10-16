@@ -4,7 +4,7 @@ angular.module('app.controllers', [])
 
         $http({
             method : "GET",
-            url : "http://localhost:55655/Registrations/GetReport"
+            url : "http://68.34.110.240:3002/Registrations/GetReport"
         }).then(function (response) {
             
             $scope.userList = JSON.parse(response.data);
