@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration HW</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <script src="assets/js/jquery.min.js"></script>   
+    <script src="assets/js/angular.min.js"></script>    
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/registrationCtrl.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="registrationCtrl">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="index.html">Hello World</a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="active" role="presentation"><a href="index.html">User Registration</a></li>
+                    <li role="presentation"><a href="adminReport.html">Admin Report</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-md-12" style="text-align:center;">
+            <div class="modal fade" role="dialog" tabindex="-1">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title">Modal Title</h4></div>
+                        <div class="modal-body">
+                            <p>The content of your modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" type="button">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="text-center">Registration </h2>
+        </div>
+    </div>
+    <div style="text-align:center;"></div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="text-align:right;">
+                    <label>First Name</label>
+                </div>
+                <div class="col-md-6">
+                    <input ng-model="firstName" type="text" name="firstName" required="" style="margin:0px;padding:0px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="text-align:right;">
+                    <label>Last Name</label>
+                </div>
+                <div class="col-md-6">
+                    <input ng-model="lastName" type="text" name="lastName" required="" style="padding:0px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="text-align:right;">
+                    <label>Address </label>
+                </div>
+                <div class="col-md-6">
+                    <input ng-model="address" type="text" name="address" required="" style="padding:0px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="text-align:right;">
+                    <label>Address 2</label>
+                </div>
+                <div class="col-md-6">
+                    <input ng-model="address2" type="text" name="address_2" required="" style="padding:0px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="text-align:right;">
+                    <label>City </label>
+                </div>
+                <div class="col-md-6">
+                    <input ng-model="city" type="text" name="city" required="" style="padding:0px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-6" style="text-align:right;">
+                        <label>State </label>
+                    </div>
+                    <div class="col-md-6">
+                        <select ng-model="state" ng-options="item.abbreviation as item.name for item in states" name="state" required="">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="text-align:right;">
+                    <label>Zip </label>
+                </div>
+                <div class="col-md-6">
+                    <input ng-model="zip" type="text" name="zip" required="" inputmode="numeric">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="text-align:right;">
+                    <label>Country </label>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="country" name="country" required="">
+                        <option value="0" selected="">Select a country...</option>
+                        <option value="US">United States</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-6" style="text-align:right;"></div>
+                <div class="col-md-6">
+                    <button class="btn btn-default" type="button" ng-click="registerClicked()">Register </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center">
+        <p>{{errorMessage}}</p>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script> 
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/registrationCtrl.js"></script>
+</body>
+
+</html>

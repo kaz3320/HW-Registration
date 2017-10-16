@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegistrationHW</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/angular.min.js"></script>    
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/reportCtrl.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="adminReportCtrl">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="index.html">Hello World </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href="index.html">User Registration</a></li>
+                    <li class="active" role="presentation"><a href="adminReport.html">Admin Report</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr><th colspan="4">Registered Users</th></tr>
+                </thead>
+                <tbody>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Address 2</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Country</th>
+                    <th>Date</th>
+                    <tr ng-repeat="user in userList">
+                    <td>{{user.FirstName}}</td>
+                    <td>{{user.LastName}}</td>
+                    <td>{{user.Address1}}</td>
+                    <td>{{user.Address2}}</td>
+                    <td>{{user.City}}</td>
+                    <td>{{user.State}}</td>
+                    <td>{{user.Zip}}</td>
+                    <td>{{user.Country}}</td>
+                    <td>{{user.DateCreated}}</td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+</body>
+
+</html>
