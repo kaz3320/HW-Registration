@@ -8,8 +8,6 @@ angular.module('app.controllers', [])
         }).then(function (response) {
             
             $scope.userList = JSON.parse(response.data);
-            var derp = 'e';
         }, function (error) {
-            var derp2 = 'e';
         });
 });
