@@ -257,7 +257,7 @@ angular.module('app.controllers', [])
                     Country: $scope.country
                 };
         
-                $http.post("http://http://68.34.110.240:3002/Registrations/AddUser", data).then(function (response) {
+                $http.post("http://68.34.110.240:3002/Registrations/AddUser", data).then(function (response) {
                     if(JSON.parse(response.data) == "1"){
                         document.location.href = "confirmation.html";
                     }
